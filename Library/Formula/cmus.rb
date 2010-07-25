@@ -6,7 +6,6 @@ class Cmus <Formula
   md5 '220e875e4210a6b54882114ef7094a79'
   version '2.3.3'
 
-  depends_on 'ncursesw'
   depends_on 'libao'
   depends_on 'mad'
   depends_on 'libogg'
@@ -18,7 +17,7 @@ class Cmus <Formula
   skip_clean 'bin/cmus-remote'
 
   def install
-    system "./configure", "prefix=#{prefix}", "mandir=#{prefix}/share/man"
+    system "./configure", "prefix=#{prefix}", "mandir=#{man}"
     system "make install"
   end
 end
